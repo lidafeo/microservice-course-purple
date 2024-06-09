@@ -3,7 +3,7 @@ import { AccountLogin, AccountRegister } from '@purple/contracts';
 import { AuthService } from './auth.service';
 import { RMQRoute, RMQValidate } from 'nestjs-rmq';
 
-@Controller('auth')
+@Controller()
 export class AuthController {
   constructor(
     private readonly authService: AuthService
