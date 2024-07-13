@@ -12,7 +12,7 @@ comes with a LSP for Vim users.
 
 ## Start the application
 
-Run `npx nx serve account` to start the development server. Happy coding!
+Run `nx run-many --target=serve --all --parallel=10` to start all services
 
 ## Build for production
 

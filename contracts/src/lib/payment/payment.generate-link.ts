@@ -15,6 +15,6 @@ export namespace PaymentGenereteLink {
   }
 
   export class Response {
-    link: string;
+    paymentLink: string;
   }
 }

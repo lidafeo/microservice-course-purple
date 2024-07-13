@@ -7,7 +7,7 @@ export enum PurchaseState {
   Started = 'Started',
   WaitingForPayment = 'WaitingForPayment',
   Purchased = 'Purchased',
-  Canceled = 'Canceled'
+  Cancelled = 'Cancelled'
 }
 export interface IUser {
   _id?: string;
