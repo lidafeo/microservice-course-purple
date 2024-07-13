@@ -26,4 +26,8 @@ export class UserRepository {
   async deleteUser(email: string) {
     await this.userModel.deleteOne({ email }).exec();
   }
+
+  async updateUser({ _id, ...data }: UserEntity) {
+    return this.userModel.updateOne({ _id: _id }, { $set: data }).exec();
+  }
 }
