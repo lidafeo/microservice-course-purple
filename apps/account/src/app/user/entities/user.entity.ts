@@ -9,7 +9,7 @@ export class UserEntity implements IUser {
   passwordHash: string;
   role: UserRole;
   courses?: IUserCourse[];
-  events: IDomainEvent[];
+  events: IDomainEvent[] = [];
 
   constructor(user: IUser) {
     this._id = user._id;
@@ -45,6 +45,10 @@ export class UserEntity implements IUser {
       data: { courseId, userId: this._id, state }
     });
     return this;
+  }
+
+  public getCourseState(courseId: string): PurchaseState {
+    return this.courses.find(c => c.courseId === courseId)?.purchaseState ?? PurchaseState.Started;
   }
 
   public getPublicProfile() {

@@ -1,6 +1,6 @@
 import { IsNumber, IsString } from 'class-validator';
 
-export namespace PaymentGenereteLink {
+export namespace PaymentGenerateLink {
   export const topic = 'payment.generate-link.command';
 
   export class Request {

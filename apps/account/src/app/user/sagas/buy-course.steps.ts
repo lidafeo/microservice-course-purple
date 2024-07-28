@@ -1,4 +1,4 @@
-import { CourseGetCourse, PaymentCheck, PaymentGenereteLink, PaymentStatus } from '@purple/contracts';
+import { CourseGetCourse, PaymentCheck, PaymentGenerateLink, PaymentStatus } from '@purple/contracts';
 import { BuyCourseSagaState } from './buy-course.state';
 import { UserEntity } from '../entities/user.entity';
 import { PurchaseState } from '@purple/interfaces';
@@ -15,7 +15,7 @@ export class BuyCourseSagaStateStarted extends BuyCourseSagaState {
       this.saga.setState(PurchaseState.Purchased, course._id);
       return { paymentLink: null, user: this.saga.user };
     }
-    const { paymentLink } = await this.saga.rmqService.send<PaymentGenereteLink.Request, PaymentGenereteLink.Response>(PaymentGenereteLink.topic, {
+    const { paymentLink } = await this.saga.rmqService.send<PaymentGenerateLink.Request, PaymentGenerateLink.Response>(PaymentGenerateLink.topic, {
       courseId: course._id,
       userId: this.saga.user._id,
       sum: course.price
