@@ -13,7 +13,7 @@ import { getRMQConfig } from './configs/rmq.config';
     RMQModule.forRootAsync(getRMQConfig()),
     MongooseModule.forRootAsync(getMongoConfig()),
     UserModule,
-    AuthModule
+    AuthModule,
   ],
 })
 export class AppModule {}
